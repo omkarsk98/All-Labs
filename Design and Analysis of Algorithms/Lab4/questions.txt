@@ -1,0 +1,5 @@
+Pivot element is in the beginning
+Pivot element is in the midlle
+Pivot element is random
+In place and stable algorithm
+Priority Queue

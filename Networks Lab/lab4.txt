@@ -1,0 +1,73 @@
+
+    (192.168.1.1)                       (192.168.1.2)
+    +-----------+                      +-----------+
+    + Router    +        +--+--------- + Router    +
+    + (Omkar)   + ------/              + (Kulkarni)+
+    +-----------+                      +-----------+          
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    + Switch    +                      + Switch    +
+    + (Switch 0)+                      + (Switch 1)+
+    +-----------+                      +-----------+ 
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    +    PC     +                      +    PC     +
+    +  (PC 0)   +                      +  (PC 1)   +
+    +-----------+                      +-----------+ 
+    (192.168.2.2)                       (192.168.3.2)
+
+Set ip this configuration and set rip using cli of Router:
+--> add networks in enable.. config terminal as 
+  "router rip"
+  "network 192.168.1.0" and "network 192.168.2.0"
+  and for the router on the right as 
+  "router rip"
+  "network 192.168.1.0" and "network 192.168.3.0"
+
+Set ip this configuration and set osp using cli of Router:
+--> go to router cli.. enable.. config terminal..
+  add ospf "router ospf 1"
+  add network as network as "network 192.168.1.0 0.0.0.255 Area 1"
+  add network as network as "network 192.168.2.0 0.0.0.255 Area 2"
+  
+  add another ospf as "router ospf 2"
+  on the other router add ospf as "router ospf 2"
+  add network as network as "network 192.168.1.0 0.0.0.255 Area 1"
+  add network as network as "network 192.168.3.0 0.0.0.255 Area 3"
+
+
+
+
+
+
+                    +--------+
+                    |  Router|
+                    | (New)  |
+       (192.168.4.1)+--------+ (192.168.5.1)
+                  /           +------
+  (192.168.4.2)  /                    \ (192.168.5.2)
+  (192.168.1.1) /                      \(192.168.1.2)
+    +-----------+                      +-----------+
+    + Router    +        +--+--------- + Router    +
+    + (Omkar)   + ------/              + (Kulkarni)+
+    +-----------+                      +-----------+          
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    + Switch    +                      + Switch    +
+    + (Switch 0)+                      + (Switch 1)+
+    +-----------+                      +-----------+ 
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    +    PC     +                      +    PC     +
+    +  (PC 0)   +                      +  (PC 1)   +
+    +-----------+                      +-----------+ 
+    (192.168.2.2)                       (192.168.3.2)
+

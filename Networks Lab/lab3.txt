@@ -1,0 +1,81 @@
+1st question
+--> Take router.
+--> go to CLI
+--> Would you like to enter the initial configuration dialog? [yes/no]: no
+--> Started with Router for command mode for user
+--> "?" for commands
+--> less privileges in user mode
+--> enable --> to privilege mode. Here the CLi starts with "#". This has more commands available. All the commands can be seen using "?".
+--> Enter "exit" to get back to user mode.
+--> to set clock. 
+  --> use "clock set ?". This will explain the clock command.
+  --> It returns "hh:mm:ss  Current Time"
+--> Set the clock as "clock set 07:23:32 29 January 2019"
+--> Use show clock to see clock
+  --> It returns "7:24:4.952 UTC Tue Jan 29 2019"
+--> Enter "config terminal" to enter terminal.
+--> Using Banner
+  --> set banner motd using "Banner motd # Hello World #"
+--> Using Hostname: This is used to change the router name.
+  --> "Hostname Kulkarni" . This command will set the name of router as "Kulkarni"
+
+
+
+
+
+
+
+2nd question
+
+    (192.168.1.1)                       (192.168.1.2)
+    +-----------+                      +-----------+
+    + Router    +        +--+--------- + Router    +
+    + (Omkar)   + ------/              + (Kulkarni)+
+    +-----------+                      +-----------+          
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    + Switch    +                      + Switch    +
+    + (Switch 0)+                      + (Switch 1)+
+    +-----------+                      +-----------+ 
+        |(192.168.2.1)                    |(192.168.3.1)
+        |                                 |
+        |                                 |
+    +-----------+                      +-----------+
+    +    PC     +                      +    PC     +
+    +  (PC 0)   +                      +  (PC 1)   +
+    +-----------+                      +-----------+ 
+    (192.168.2.2)                       (192.168.3.2)
+
+
+
+    
+
+Set Up two Routers:
+  --> Take 2 Routers(1841). Add serial ports in each of them. To do this, go to router, switch it off, 
+        add serial port from WIC 1T and switch on the router.
+  --> To set up the Interface of the router, use "Interface serial 0/0/0"
+  --> To set up ip address, use command "ip address 192.168.1.1 255.255.255.0"
+  --> To switch on the serial port, use command "no shut".
+  --> To exit this config mode, use command "exit".
+Connect a switch to each router.
+  --> Connect router and switch using Copper Straight Cable.
+  --> On each Router, go to CLI, enter "enable", then enter "config terminal".
+  --> Set interface as "Interface FastEthernet0/0"
+  --> Set IP as "ip address 192.168.2.1 255.255.255.0".
+  --> Enter "no shut". This will switch it on.
+  --> Enter "exit". This will automatically configure the switch.
+Connect a PC to each router. 
+  --> Do this using Copper Straight Through cable.
+  --> Add IP address of PC0 as 192.168.2.2 using GUI.
+  --> Add IP address of PC1 as 192.168.3.2 using GUI.
+To set up the static routes of the routers. 
+  --> On router Omkar, go to enable, config terminal.
+  --> Now set up static routes, use command "ip route 192.168.3.0 255.255.255.0 192.168.1.2"
+  --> On router Kulkarni, go to enable, config terminal.
+  --> Now set up static routes, use command "ip route 192.168.2.0 255.255.255.0 192.168.1.1"
+Now Ping from PC0 to Router Kulkarni
+  --> Go to PC0's cmd, use command "ping 192.168.1.2". This will send 4 packets to Router Kulkarni. 
+To Ping PC1 from PC0
+  --> Go to PC0's cmd, use command "ping 192.168.3.2". This will send 4 packets to Router Kulkarni. 

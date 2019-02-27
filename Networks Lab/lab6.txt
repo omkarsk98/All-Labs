@@ -1,0 +1,42 @@
+1. From PC1. Go to web browser and search 10.0.0.254
+Output --> Request TimeOut
+
+Setting up route between two routers
+2. On 1st router, go cli, enable, config terminal, then "ip route 0.0.0.0 0.0.0.0 200.10.0.2"
+3. On 2nd router, go cli, enable, config terminal, then "ip route 0.0.0.0 0.0.0.0 200.10.0.1"
+
+For NAT
+-> inside local
+-> outside local
+-> configure NAT
+
+Go FastEthernet0/0 on 2nd Router. 
+1. Use command "ip NAT inside"
+2. "exit"
+Go Serial2/0 on 2nd Router. 
+1. Use command "ip NAT outside"
+2. "exit"
+In Config mode on 2nd Router
+1. Static mapping "ip NAT inside source static 10.0.0.254 200.10.0.2"
+2. "Exit"
+3. "copy run start" --> Running configuration saved for startup.
+
+To check if the static mapping is correct?
+1. "show run"
+
+On PC0, go to web browser and browse "200.10.0.2"
+--> Browser opens!!
+
+Go FastEthernet0/0 on 1st Router. 
+1. Use command "ip NAT inside"
+2. "exit"
+Go Serial2/0 on 1st Router. 
+1. Use command "ip NAT outside"
+2. "exit"
+
+To limit the visibility of IPs of internal ip addresses.
+"access-list 1 permit 192.168.1.0 0.0.0.255"
+
+To directly route it to destination from Router0,
+"ip NAT inside source list 1 interface Serial2/0 overload"
+This is to route messages from network containing the PC to the server. 
