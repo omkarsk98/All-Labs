@@ -1,0 +1,38 @@
+VLAN--> A private LAN within a LAN. Devices of a specific VLAN arent visible outside.
+
+Configure 2 switches with 2PCs each.
+1. Set uo the configuration shown in figure and assign the following IPs.
+2. On Switch 1, config, VLAN, 
+  number:10, name:lab1
+  number:20, name:lab2
+3. For each ports of Switch1, set vlan.
+  PC1 -> lab-1
+  PC2 -> lab-2
+4. Ping from PC1 to PC2 --> Failed. This is because of restricted access.
+5. Add IPs to the PCs on the right.
+6. Config VLAN on Switch2
+6. On Switch1, set vlan type to trunk for the port that is connected to Switch2. 
+  Set port VLAN to 1-1005
+  Switch2 get configured automitically.
+7. ping from PC1 to PC2. Its successful.
+
+Configure router connected to a switch with 2 PCs connected to it.
+1. Set up config acc to diagram
+2. set vlan as 
+  number:10, name:lab1
+  number:20, name:lab2
+3. On router, add 2 subports,
+  go to CLI, in config, add "int fa0/0.1"
+  entered into sub port, "encapsulation dot1q 10". It will add dotq protocol
+  set ip and subnet mask, "ip address 192.168.1.1 255.255.255.0" for conifguring ip for this vlan
+  "no shut" and "exit"
+  Repeat the same configuration for another sub port with following values
+  "int fa0/0.2", "encapsulation dot1q 20", "ip address 192.168.2.1 255.255.255.0"
+4. For each ports of Switch1, set vlan.
+  PC1 -> lab-1
+  PC2 -> lab-2
+5. On Switch, CLI, enable, config terminal
+  "interface FastEthernet0/1", "switchport access vlan 10",
+  "interface FastEthernet2/1", "switchport access vlan 20", 
+  "int fa2/1", "switchport mode trunk"
+5. Ping from PC1 to PC2. Successful!!
