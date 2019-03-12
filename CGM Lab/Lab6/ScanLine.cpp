@@ -1,8 +1,7 @@
-#include <iostream>
-#include <stdio.h>
-#include <curses.h>
+#include <iostream.h>
+#include <conio.h>
 #include <graphics.h>
-// #include <dos.h>
+#include <dos.h>
 struct edge
 {
   int x1, y1, x2, y2, flag;
@@ -13,16 +12,16 @@ int main()
   struct edge ed[10], temped;
   float dx, dy, m[10], x_int[10], inter_x[10];
   int x[10], y[10], ymax = 0, ymin = 480, yy, temp;
-  initgraph(&gd, &gm, NULL);
+  initgraph(&gd, &gm, "c:\\turboc3\\bgi");
 
   /*read the number of vertices of the polygon*/
-  printf("Enter the no.of vertices of the graph");
-  scanf("%d",&n);
+  cout << "Enter the no.of vertices of the graph";
+  cin >> n;
   /*read the vertices of the polygon and also find ymax and ymin*/
-  printf("Enter the vertices");
+  cout << "Enter the vertices";
   for (i = 0; i < n; i++)
   {
-    scanf("%d %d",&x[i],&y[i]);
+    cin >> x[i] >> y[i];
     if (y[i] > ymax)
       ymax = y[i];
     if (y[i] < ymin)
@@ -172,7 +171,7 @@ int main()
       line((int)x_int[i], yy, (int)x_int[i + 1], yy);
     }
     yy--;
-    // delay(100);
+    delay(100);
   }
   getch();
   closegraph();
