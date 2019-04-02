@@ -1,0 +1,4 @@
+Configure multiple ubuntu VM and assign them static IP address, network mass, dns named server, network, broadcast id, gateway.
+2 of them should be on same network and one should be on another network. Also, assign them host name.
+
+Create multiple networks. Assign multiple IP address to single machine.
