@@ -19,7 +19,7 @@ void display()
     glVertex2f(1, -1);
     glVertex2f(1, 1);
     glVertex2f(-1, 1);
-    sleep(2);
+    sleep(1);
     glTranslatef(0.1, 0, 0);
     // glColor3f(0, 0, 0);
     // glVertex2f(0, 0);
