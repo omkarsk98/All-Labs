@@ -1,63 +1,10 @@
-                        +---------+ 
-                        | Server  |
-                        +---------+
-                            |
-      Router 0-----------Switch 2-----------Router1
-        |                                         |
-
-
-
-
-
-
-
-
-
-
-Add a DHCP IP pool
-1. Go to server and switch on DHCP Server.
-2. Add pool name as "Pool1"
-3. Add default gateway as "192.168.2.1"
-4. Add DNS Server as "192.168.1.10"
-5. Add starting IP as "192.168.1.11"
-6. Add Subnet Mask as "255.255.255.0"
-7. Add the COnfiguration.
-
-Add another pool for another network.
-1. Go to server and switch on DHCP Server.
-2. Add pool name as "Pool2"
-3. Add default gateway as "192.168.3.1"
-4. Add DNS Server as "192.168.3.99"
-5. Add starting IP as "192.168.3.100"
-6. Add Subnet Mask as "255.255.255.0"
-7. Add the Configuration.
-
-Add IP addresses of the network of router to server
-1. Add IP address of both the routers as "192.168.1.1" and Subnet mask as "255.255.255.0" 
-  in their respective Fast Ethernet ports and switch them on.
-2. Add the IP address of Router0 fast ethernet to switch as "192.168.2.1" and subnet as "255.255.255.0"
-3. Add the IP address of Router1 fast ethernet to switch as "192.168.3.1" and subnet as "255.255.255.0"
-
-Add IP helper address
-1. Go to each router CLI and goto the netwrok of Router and Switch.
-2. Enter Command "IP helper-address 102.168.1.10"
-
-
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+************************** DHCP **************************
 1. Add ip address of Fast Ethernet0/0 for router as 192.168.10.1
-2. go to cli of router and in enable, add host name and interface for it. 
-  "host R1"
+2. go to cli of router and in enable and in config terminal, add host name and interface for it. 
+  "hostname R1"
   add interface as "interface FastEthernet0/0"
 3. "exit"
-4. On the same router, to set dgch pool
+4. On the same router, to set dhcp pool
   "ip dhcp pool ip001"
   Add network as "net 192.168.10.0 255.255.255.0" and then exit
 5. To exclude some IPs from pool
@@ -68,3 +15,10 @@ Add IP helper address
 7. Show running configuration "sh run"
 
 Enable DHCP of all the PCs.
+
+
+------------------------------------------------------------------------------------------------------------
+hostname r1 to define name of the host.
+ip dhcp pool ip001
+network 192.168.10.0 255.255.255.0
+ip dhcp exc 192.168.10.1 192.168.10.10

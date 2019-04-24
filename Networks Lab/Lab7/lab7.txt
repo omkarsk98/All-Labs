@@ -1,7 +1,7 @@
 VLAN--> A private LAN within a LAN. Devices of a specific VLAN arent visible outside.
 
 Configure 2 switches with 2PCs each.
-1. Set uo the configuration shown in figure and assign the following IPs.
+1. Set up the configuration shown in figure and assign the following IPs.
 2. On Switch 1, config, VLAN, 
   number:10, name:lab1
   number:20, name:lab2
@@ -16,6 +16,7 @@ Configure 2 switches with 2PCs each.
   Switch2 get configured automitically.
 7. ping from PC1 to PC2. Its successful.
 
+-----------------------------------------------------------------
 Configure router connected to a switch with 2 PCs connected to it.
 1. Set up config acc to diagram
 2. set vlan as 
