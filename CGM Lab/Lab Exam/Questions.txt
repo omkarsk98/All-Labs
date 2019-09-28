@@ -1,0 +1,5 @@
+Odd roll numbers:
+Write a program to implement a rectangle using DDA and reflect it along reflection line y=x
+
+Even roll numbers:
+Write a program to implement a rectangle using bresehman's line drawing alorithm and rotate it by 45 deg.
