@@ -23,6 +23,6 @@
 # skip: no. of lines to skip from the beginning
 # stringAsFactors: should char variable be added as factor
 
-data <- read.table("foo.txt", nrows=12, header=False)
+data <- read.table("foo.txt", nrows=12, header=FALSE)
 names(data) <- c("open", "high","low", "close")
 data
