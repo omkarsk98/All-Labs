@@ -1,5 +1,3 @@
-I will document individual diretories seperately soon.<br>
-<br>
 .  
 ├── Automata and Compiler Design  
 │   ├── Lab1  
