@@ -9,18 +9,23 @@
 │   │   ├── Query_Machine6.c  
 │   │   ├── Query_Machine7.c  
 │   │   ├── Query_Machine.c  
-│   │   └── Query_Machine.py  
+│   │   ├── Query_Machine.py  
+│   │   └── README.md  
 │   ├── Lab2  
 │   │   ├── DFA1.c  
 │   │   ├── DFA2.c  
-│   │   └── DFA3.c  
+│   │   ├── DFA3.c  
+│   │   └── README.md  
 │   ├── Lab3  
-│   │   └── FindType.c  
+│   │   ├── FindType.c  
+│   │   └── README.md  
 │   ├── Lab4  
-│   │   └── PushDownAutomata.cpp  
+│   │   ├── PushDownAutomata.cpp  
+│   │   └── README.md  
 │   └── Lab Exam  
 │       ├── q1.c  
-│       └── q2.c  
+│       ├── q2.c  
+│       └── README.md  
 ├── Big Data Analysis  
 │   ├── Assignment  
 │   │   └── q2.js  
@@ -78,10 +83,8 @@
 │   │   ├── Question.c  
 │   │   └── Questions.txt  
 │   ├── Project  
-│   │   ├── a.out  
 │   │   ├── Takeoff  
-│   │   ├── Takeoff.c  
-│   │   └── temp.txt  
+│   │   └── Takeoff.c  
 │   └── README.md  
 ├── Design and Analysis of Algorithms  
 │   ├── Lab1  
@@ -174,6 +177,7 @@
 │       ├── forLoops.r  
 │       ├── functions.r  
 │       ├── ifElse.r  
+│       ├── README.md  
 │       ├── repeat_next_break.r  
 │       ├── specdata  
 │       │   ├── 001.csv  
@@ -511,5 +515,5 @@
 │       └── while.r  
 └── README.md  
   
-42 directories, 469 files  
+42 directories, 473 files  
   
