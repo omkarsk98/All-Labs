@@ -2,4 +2,6 @@
 # CGM\ Lab/Project/
 Big\ Data\ Analysis/
 R_Course/**/specdata/
+R_Course/**/*.pdf
+R_Course/**/*.csv
 **/a.out
